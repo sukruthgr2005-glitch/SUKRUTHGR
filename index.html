@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sri Veena Mobiles | Mobile Shop in Bengaluru</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background: #f5f7fa;
+        }
+
+        /* HEADER */
+        header {
+            background: #111827;
+            color: white;
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+
+            background:
+                linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+                url("https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+            transition: .3s;
+        }
+
+        .primary {
+            background: #38bdf8;
+            color: #111827;
+        }
+
+        .primary:hover {
+            background: white;
+        }
+
+        .whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .whatsapp:hover {
+            background: #1da851;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            color: #111827;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* ABOUT */
+        .about {
+            background: white;
+        }
+
+        .about-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #111827;
+        }
+
+        /* SERVICES */
+        .services {
+            background: #f5f7fa;
+        }
+
+        .service-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.08);
+            transition: .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .service-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+        }
+
+        /* PRODUCTS */
+        .products {
+            background: white;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .product-card {
+            background: #f8fafc;
+            padding: 20px;
+            text-align: center;
+            border-radius: 12px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            margin-bottom: 8px;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #111827;
+            color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin: 12px 0;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .contact-form textarea {
+            height: 130px;
+            resize: none;
+        }
+
+        .contact-form button {
+            border: none;
+            cursor: pointer;
+            padding: 13px 25px;
+            border-radius: 25px;
+            background: #38bdf8;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #020617;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* FLOATING WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,.3);
+            z-index: 999;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+
+            .service-container {
+                grid-template-columns: 1fr;
+            }
+
+            .product-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                font-size: 12px;
+                margin: 0 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+    <div class="logo">
+        Sri Veena <span>Mobiles</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#products">Mobiles</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- HOME -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Welcome to <span>Sri Veena Mobiles</span>
+        </h1>
+
+        <p>
+            Your Trusted Mobile Shop in Bengaluru
+        </p>
+
+        <p>
+            Latest Smartphones • Accessories • Repairs • Best Service
+        </p>
+
+        <a href="#products" class="btn primary">
+            View Mobiles
+        </a>
+
+        <a href="https://wa.me/919632371400"
+           class="btn whatsapp"
+           target="_blank">
+            WhatsApp Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT US -->
+<section class="about" id="about">
+
+    <div class="section-title">
+
+        <h2>About Us</h2>
+
+        <p>Know more about Sri Veena Mobiles</p>
+
+    </div>
+
+    <div class="about-container">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=900&q=80"
+                alt="Mobile Shop">
+
+        </div>
+
+        <div class="about-text">
+
+            <h3>Your Trusted Mobile Store</h3>
+
+            <p>
+                Sri Veena Mobiles is a customer-focused mobile shop
+                located in Bengaluru. We provide smartphones,
+                mobile accessories and reliable mobile repair services.
+            </p>
+
+            <br>
+
+            <p>
+                Our goal is to provide customers with quality products,
+                transparent pricing and friendly service.
+            </p>
+
+            <br>
+
+            <p>
+                📍 Bengaluru, Karnataka
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+<section class="services" id="services">
+
+    <div class="section-title">
+
+        <h2>Our Services</h2>
+
+        <p>Everything you need for your mobile</p>
+
+    </div>
+
+    <div class="service-container">
+
+        <div class="service-card">
+
+            <div class="service-icon">📱</div>
+
+            <h3>Mobile Sales</h3>
+
+            <p>
+                Latest smartphones from popular brands
+                at competitive prices.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">🔧</div>
+
+            <h3>Mobile Repair</h3>
+
+            <p>
+                Professional repair services for common
+                mobile problems.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">🎧</div>
+
+            <h3>Accessories</h3>
+
+            <p>
+                Chargers, cables, earphones, covers,
+                screen guards and more.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">🔋</div>
+
+            <h3>Battery Replacement</h3>
+
+            <p>
+                Battery replacement services for
+                supported smartphones.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">🛡️</div>
+
+            <h3>Screen Protection</h3>
+
+            <p>
+                Screen guards and protective accessories
+                for your smartphone.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">💬</div>
+
+            <h3>Customer Support</h3>
+
+            <p>
+                Friendly assistance before and after
+                your purchase.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MOBILES -->
+<section class="products" id="products">
+
+    <div class="section-title">
+
+        <h2>Popular Mobiles</h2>
+
+        <p>Explore some popular smartphone categories</p>
+
+    </div>
+
+    <div class="product-container">
+
+        <div class="product-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=600&q=80"
+                alt="Smartphone">
+
+            <h3>Premium Smartphones</h3>
+
+            <p>Latest premium models</p>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80"
+                alt="Smartphone">
+
+            <h3>Android Phones</h3>
+
+            <p>Wide range of Android phones</p>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=600&q=80"
+                alt="Mobile Accessories">
+
+            <h3>Mobile Accessories</h3>
+
+            <p>Covers, chargers & cables</p>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=600&q=80"
+                alt="Phone">
+
+            <h3>Budget Smartphones</h3>
+
+            <p>Affordable smartphones</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <div class="section-title">
+
+        <h2 style="color:white;">Contact Us</h2>
+
+        <p style="color:#ccc;">
+            Get in touch with Sri Veena Mobiles
+        </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <h3>Visit Our Shop</h3>
+
+            <p>📍 Malleswaram, Bengaluru, Karnataka</p>
+
+            <p>📞 <a
+                href="tel:+919632371400"
+                style="color:white;">
+                +91 96323 71400
+            </a></p>
+
+            <p>📧 sukruthgr2005@gmail.com</p>
+
+            <p>🕐 Monday - Sunday: 10:00 AM - 9:00 PM</p>
+
+            <br>
+
+            <a
+                href="https://wa.me/919632371400"
+                class="btn whatsapp"
+                target="_blank">
+                Chat on WhatsApp
+            </a>
+
+        </div>
+
+
+        <div class="contact-form">
+
+            <form
+                action="mailto:sukruthgr2005@gmail.com"
+                method="post"
+                enctype="text/plain">
+
+                <input
+                    type="text"
+                    name="Name"
+                    placeholder="Your Name"
+                    required>
+
+                <input
+                    type="tel"
+                    name="Phone"
+                    placeholder="Phone Number"
+                    required>
+
+                <input
+                    type="email"
+                    name="Email"
+                    placeholder="Email Address">
+
+                <textarea
+                    name="Message"
+                    placeholder="Your Message"
+                    required></textarea>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2026 Sri Veena Mobiles. All Rights Reserved.
+    </p>
+
+    <p>
+        Bengaluru, Karnataka
+    </p>
+
+</footer>
+
+
+<!-- WHATSAPP FLOATING BUTTON -->
+
+<a
+    href="https://wa.me/919632371400"
+    class="whatsapp-float"
+    target="_blank"
+    title="Chat on WhatsApp">
+
+    ☎
+
+</a>
+
+</body>
+</html>
